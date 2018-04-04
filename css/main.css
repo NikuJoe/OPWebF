@@ -1,2 +1,59 @@
+/*format reset code*/
 
- /*this is the start of the main section of css*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+/*this is the start of the main section of css*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Comic Sans MS", serif;
+}
+
+nav {
+  color: red;
+  font-weight: bold;
+}
+
+.mainNav{
+  width: 100%
+}
+
+.mainNav li {
+  color: black;
+}
+
+li {
+  display: inline;
+  text-align: center;
+  margin: auto;
+  font-size: 1em;
+
+}
+
+.mainNav a:hover {
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
