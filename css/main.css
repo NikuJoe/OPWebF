@@ -25,7 +25,12 @@ time, mark, audio, video {
 /*this is the start of the main section of css*/
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Comic Sans MS", serif;
+  font-family: "Raleway", serif;
+	background-color: lightblue;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 nav {
@@ -33,27 +38,58 @@ nav {
   font-weight: bold;
 }
 
-.mainNav{
-  width: 100%
+.mainNav {
+  margin: 0 auto;
+	width: 1000px;
+  position:sticky;
+	background-color: lightgrey;
 }
 
-.mainNav li {
+.mainNav ul{
+	background-color: yellow;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.mainNav li{
+  display:inline-block;
+  text-align: justify;
+	width: 100% auto;
+	padding: 10px;
+	background-color: lightpink;
+}
+
+.mainNav a {
   color: black;
+	margin: 10 auto;
+	background-color: red;
+	transition: 1s;
 }
 
 li {
-  display: inline;
-  text-align: center;
-  margin: auto;
+  display: inline-block;
+  margin: 0 auto;
   font-size: 1em;
-
+	font-family: 'Amiri', serif;
+	background-color: lightgreen;
 }
 
+ul{
+  text-align: center;
+	margin: 10px auto;
+}
 .mainNav a:hover {
   font-size: 2em;
+
 }
 
 a {
   text-decoration: none;
   color: red;
+}
+
+p{
+	font-size:24px;
+	text-decoration: underline;
+
 }
