@@ -24,62 +24,97 @@ time, mark, audio, video {
 
 /*this is the start of the main section of css*/
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", serif;
-	background-color: lightblue;
-  display: block;
-  font-size: 30px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-nav {
-  color: red;
-  font-weight: bold;
-}
-
-.mainNav {
-  margin: 0 auto;
-	width: 1000px;
-  position:sticky;
-	background-color: lightgrey;
-}
-
-.mainNav ul{
-	background-color: yellow;
-	margin: 0 auto;
+body {
+	background-color: #f3f3f3;
 	text-align: center;
 }
 
-.mainNav li{
-  display:inline-block;
-  text-align: justify;
-	width: 100% auto;
-	padding: 10px;
-	background-color: lightpink;
+header {
+	background-color:#fff;
+	display:block;
+	width:100%;
 }
 
-.mainNav a {
+nav {
+	list-style-type: none;
+}
+
+header .bannerWrapper {
+	font-family: "Cinzel", serif;
+	font-size: 24px;
+	font-weight: 900;
+	color: #111;
+	padding: 20px, 0;
+	background-image: url("res/img/justatest.png");
+	background-repeat: repeat;
+	background-size: cover;
+	display: cover;
+}
+
+header .bannerWrapper img {
+}
+
+.mainNav_L {
+	background-color: lightgrey;
+}
+
+.mainNav_L ul{
+
+	height:100px;
+	display:flex;
+	justify-content: center;
+}
+
+.mainNav_L ul li {
+  margin:10px 10px 10px 0;
+	padding: 5px 5px 5px 0;
+	align-self: center;
+  border-right: 3px solid black;
+}
+
+.mainNav_L ul li:last-child {
+	border: none;
+}
+
+.mainNav_L ul li a {
   color: black;
-	margin: 10 auto;
-	background-color: red;
-	transition: 1s;
+	transition: .75s;
+}
+
+.mainNav_S {
+	display: none;
+}
+
+.floatBox_Mission {
+	width: 100%;
+	padding: 30px auto;
+	margin: 10px 50px 10px 50px auto;
+	background-color: #606060;
+}
+
+.floatBox_Mission h2{
+	background-color: #606060;
 }
 
 li {
   display: inline-block;
-  margin: 0 auto;
   font-size: 1em;
 	font-family: 'Amiri', serif;
-	background-color: lightgreen;
 }
 
 ul{
-  text-align: center;
-	margin: 10px auto;
 }
-.mainNav a:hover {
+
+.mainNav_L a:hover {
   font-size: 2em;
+	color: red;
+}
+
+.pContainer{
+
+}
+
+.hcontainer {
 
 }
 
@@ -92,4 +127,50 @@ p{
 	font-size:24px;
 	text-decoration: underline;
 
+}
+h2 {
+	font-size: 50px;
+}
+
+/* =======FOR MOST MOBILE DEVICES=======*/
+@media only screen and (max-width:767px) {
+/*hides transforming header*/
+	header .bannerWrapper {
+		display: cover;
+	}
+
+	.mainNav_L {
+		display: none;
+	}
+/*enables static header for small devices*/
+	.mainNav_S {
+		display: inline-block;
+		height: 100px;
+	}
+
+	.mainNav_S ul{
+		background-color: red;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.mainNav_S ul li{
+	  display:inline-block;
+		width: 100% auto;
+		padding: 10px;
+	}
+
+	.mainNav_S ul li a {
+	  color: black;
+		padding: 10 auto;
+	}
+
+}
+
+/*=======FOR MOST TABLETS=======*/
+@media only screen and (min-width:768px) and (max-width:1080px){
+	/*color change is for a test to see that it is in fact working*/
+	.mainNav_L{
+		background-color: green;
+	}
 }
