@@ -70,7 +70,7 @@ nav {
 
 	height:100px;
 	display:flex;
-	justify-content: right;
+	justify-content: flex-end;
 }
 
 .mainNav_L ul li {
@@ -170,7 +170,9 @@ h2 {
 /*enables static header for small devices*/
 	.mainNav_S {
 		display: inline-block;
-		height: 100px;
+		position: sticky;
+		position: -webkit-sticky;
+		top: 0;
 	}
 
 	.mainNav_S ul{
@@ -198,4 +200,13 @@ h2 {
 	.mainNav_L{
 		background-color: green;
 	}
+
+	.mainNav_L ul{
+
+	}
+
+	.mainNav_L ul li{
+		border: 0;
+	}
+
 }
