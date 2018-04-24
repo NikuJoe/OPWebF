@@ -1,4 +1,3 @@
-/*format reset code*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -18,195 +17,158 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
 }
 
 
 /*this is the start of the main section of css*/
-
-body {
-	background-color: #f3f3f3;
+/*
+h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
-header {
-	background-color:#fff;
-	display:block;
-	width:100%;
-}
-
-nav {
+ul {
 	list-style-type: none;
-	position:sticky;
-	top: 0;
 }
 
-.coverWrapper {
-	font-family: "Cinzel", serif;
-	font-size: 24px;
-	font-weight: 900;
-	color: #111;
-	padding: 20px, 0;
-	background-image: url("res/img/justatest.png");
-	background-repeat: repeat;
+li {
+	text-decoration: none;
+	display: inline;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+p {
+	font-size:30px;
+}
+
+
+header {
+	background: url("../res/img/DOF/High-Quality-Spindle.png") no-repeat, center, center fixed;
 	background-size: cover;
 }
+*/
+/* Navigation bar settings
 
-/* Navigation bar settings*/
-
-.mainNav_L {
-	background-color: lightgrey;
+.nav_S {
+	display: block;
+	position: fixed;
+	height: 100px;
+	width: 100vw;
+	margin: 0 auto;
+	clear: both;
 }
 
-.mainNav_L img{
-  height: auto;
-	width: auto;
-	max-height: 50px;
-	float: left;
-	margin:5px auto;
-}
-
-.mainNav_L ul{
-
-	height:100px;
-	display:flex;
-	justify-content: flex-end;
-}
-
-.mainNav_L ul li {
-  margin:10px;
-	padding: 5px;
-	align-self: center;
-  border-right: 3px solid black;
-	border-left: 3px solid black;
-	transition: .75s;
-	transition-delay: .5s;
-}
-
-.mainNav_L ul li:first-child {
-	border-left: none;
-}
-.mainNav_L ul li:last-child {
-	border-right: none;
-}
-
-.mainNav_L ul li a {
-  color: black;
-	transition: .75s;
-}
-
-.mainNav_L ul li:hover {
-	border-color: red;
-}
-
-.mainNav_L ul li a:hover {
-  font-size: 2em;
-	color: red;
-}
-
-.mainNav_S {
+.nav_M {
 	display: none;
+	height: 100px;
+	width: 100vw;
+	margin: 0 auto;
+	clear: both;
 }
 
+.nav_L {
+	display: none;
+	clear: both;
+}
 
-/* Mission statement container styles*/
+*/
+/* Mission statement container styles
 
 .floatBox_Mission {
-	width: 100%;
+	width: 90vw;
 	padding: 30px auto;
-	margin: 10px 50px 10px 50px auto;
+	margin: 0 auto;
 	background-color: #606060;
 }
 
 .floatBox_Mission h2{
 	background-color: #606060;
 }
-
+*/
 /*global styles*/
 
-li {
-  display: inline-block;
-  font-size: 1em;
-	font-family: 'Amiri', serif;
-}
+/* =======FOR MOST MOBILE DEVICES=======
+@media only screen and (min-width:768px) {
 
-ul{
-}
-
-
-
-.pContainer{
-
-}
-
-.hcontainer {
-
-}
-
-a {
-  text-decoration: none;
-  color: red;
-}
-
-p{
-	font-size:24px;
-	text-decoration: underline;
-
-}
-h2 {
-	font-size: 50px;
-}
-
-/* =======FOR MOST MOBILE DEVICES=======*/
-@media only screen and (max-width:767px) {
-/*hides transforming header*/
-	header .bannerWrapper {
-		display: cover;
-	}
-
-	.mainNav_L {
+  .nav_S {
 		display: none;
 	}
-/*enables static header for small devices*/
-	.mainNav_S {
-		display: inline-block;
-		position: sticky;
-		position: -webkit-sticky;
-		top: 0;
+
+	.nav_L {
+		display: none;
 	}
 
-	.mainNav_S ul{
-		background-color: red;
-		margin: 0 auto;
-		text-align: center;
+	.nav_M {
+		display: block;
+		position: absolute;
+
+}
+*/
+/*=======FOR MOST TABLETS=======
+@media screen and (min-width:1024px){
+
+
+	.nav_S {
+		display: none;
 	}
 
-	.mainNav_S ul li{
-	  display:inline-block;
-		width: 100% auto;
-		padding: 10px;
+	.nav_M {
+		display: none;
 	}
 
-	.mainNav_S ul li a {
+	.nav_L {
+		display: block;
+	}
+
+	.nav_L img{
+	  height: auto;
+		width: auto;
+		max-height: 50px;
+		float: left;
+		margin:5px auto;
+	}
+
+	.nav_L ul{
+
+		height:100px;
+		display:flex;
+		justify-content: flex-end;
+	}
+
+	.nav_L ul li {
+	  margin:10px;
+		padding: 5px;
+		align-self: center;
+	  border-right: 3px solid black;
+		border-left: 3px solid black;
+		transition: .75s;
+		transition-delay: .5s;
+	}
+
+	.nav_L ul li:first-child {
+		border-left: none;
+	}
+	.nav_L ul li:last-child {
+		border-right: none;
+	}
+
+	.nav_L ul li a {
 	  color: black;
-		padding: 10 auto;
+		transition: .75s;
+	}
+
+	.nav_L ul li:hover {
+		border-color: red;
+	}
+
+	.nav_L ul li a:hover {
+		text-decoration: none;
+		font-size: 2em;
+		color: red;
 	}
 
 }
-
-/*=======FOR MOST TABLETS=======*/
-@media only screen and (min-width:768px) and (max-width:1080px){
-	/*color change is for a test to see that it is in fact working*/
-	.mainNav_L{
-		background-color: green;
-	}
-
-	.mainNav_L ul{
-
-	}
-
-	.mainNav_L ul li{
-		border: 0;
-	}
-
-}
+*/
