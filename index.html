@@ -6,15 +6,17 @@
     <title>Opus</title>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Imports Bootstrap 4.1.0 Framework-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--for mobile, user-scalable=no disables zoom-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!--Imports jQuery and Popper.js for bootstrap to play nice-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!--Imports Bootstrap 4.1.0 Framework-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!--Imports main custom stylesheets-->
     <link href="css/main.css" rel="stylesheet">
@@ -27,54 +29,145 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
   </head>
 
   <body>
+
+    <!--Navigation-->
     <header>
-      <nav class="nav_L">
-        <img src="res/img/logo/OPUS_Logo_noBK_black.png" alt="CompanyLogo">
-        <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#aboutUs">About Us</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#THOLD">THIS IS THE LARGE NAV</a></li>
-        </ul>
-      </nav>
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <a class="navbar-brand" href="#"><img src="res/img/logo/OPUS_Logo_noBK_black.png" alt="CompanyLogo"></a>
 
-      <nav class="nav_M">
-        <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#aboutUS">About Us</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="THOLD">THIS IS THE MEDIUM NAV</a></li>
-        </ul>
-      </nav>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <nav class="nav_S">
-        <ul>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#aboutUS">About Us</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#THOLD">THIS IS THE SMALL NAV</a></li>
-        </ul>
-      </nav>
+          <div id="navbarResponsive" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav ml-auto dropdown">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutUs">About Us</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#service">Service</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#community">Community</a></li>
+            </ul>
+          </div>
+        </nav>
     </header>
 
+    <!--Carousel code-->
+    <div id="rotatingSplash" class="carousel slide carousel-fade" data-ride="carousel" data-interval="7000" data-pause="hover">
+
+      <!--Carousel indicators-->
+
+      <ul class="carousel-indicators">
+        <li class="active" data-target="#rotatingSplash" data-slide-to="0"></li>
+        <li data-target="#rotatingSplash" data-slide-to="1"></li>
+        <li data-target="#rotatingSplash" data-slide-to="2"></li>
+        <li data-target="#rotatingSplash" data-slide-to="3"></li>
+      </ul>
+
+      <!--Carousel Slides-->
+
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="carousel-item-bk_1">
+          </div>
+          <div class="carousel-overlay">
+          </div>
+          <div class="carousel-caption">
+            <h1>DOF Milling Machine 1</h1>
+            <p>This is the best milling machine available. Period.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-item-bk_2">
+          </div>
+          <div class="carousel-overlay">
+          </div>
+          <div class="carousel-caption">
+            <h1>Intraoral Scanner</h1>
+            <p>Will we be able to carry this product?</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-item-bk_3">
+          </div>
+          <div class="carousel-overlay">
+          </div>
+          <div class="carousel-caption">
+            <h1>Sinter</h1>
+            <p>Bakes things just right</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-item-bk_4">
+          </div>
+          <div class="carousel-overlay">
+          </div>
+          <div class="carousel-caption">
+            <h1>Vaccum</h1>
+            <p>This thing sucks.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid">
       <div class="floatBox_Mission">
         <h2 class="text_Statement"> We are dedicated to crafting catered dental workflow solutions digitally.
           <br>Class. Pride. Honor.
           <br>Opus
         </h2>
       </div>
+    </div>
 
-      <div class="pContainer" id="products">
+    <!--SVG TEST-->
+    <div class="container-fluid svgTest" id= svgGroup>
+      <svg class="brand-svg"
+       xmlns:dc="http://purl.org/dc/elements/1.1/"
+       xmlns:cc="http://creativecommons.org/ns#"
+       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+       xmlns:svg="http://www.w3.org/2000/svg"
+       xmlns="http://www.w3.org/2000/svg"
+       version="1.1"
+       viewBox="0 0 210 297"
+       width="100%">
+        <g>
+          <path id="opusdds_logo_path" d="M 33.261905,68.702372 C 137.58333,66.434514 45.357142,173.77975 45.357142,173.77975 l 89.958328,-25.70238 -27.97023,86.17857 -78.61905,-105.07738 123.97619,-15.875 z" style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="container namaetesuto">
+      <p id="nameTest">
+        Click to Show Measurements
+      </p>
+    </div>
+
+    <div class="container-fluid">
+
+      <div class="row pC" id="products">
         <div class="sectHeader">
           <h2>Products</h2>
         </div>
       </div>
 
-      <div class="hContainer" id="aboutUS">
+    </div>
+
+    <div class="container-fluid" id="aboutUs">
+
+      <div class="row hContainer">
         <div class="sectHeader">
           <h2>About Us</h2>
         </div>
@@ -87,16 +180,24 @@
           <p>In finibus, dolor a porttitor luctus, justo orci eleifend enim, non dictum orci metus in orci. Donec sem ligula, vestibulum et turpis sit amet, vehicula porttitor diam. Morbi feugiat feugiat nisi, sit amet congue metus ullamcorper vitae. Cras commodo, diam vel mollis vehicula, ante sem accumsan arcu, at elementum magna quam ut dui. Etiam nec mollis felis. In ut quam neque. Duis vitae gravida odio. Aliquam vitae euismod mauris, quis varius tortor. Nulla malesuada, diam dignissim vulputate auctor, augue tortor convallis sapien, et commodo nisi lacus sit amet quam. Vestibulum tincidunt in arcu sit amet pulvinar. Proin viverra tortor nec odio ornare lobortis. Vivamus a nisi tincidunt, posuere neque vel, convallis sem. Nunc nec porttitor magna, sit amet aliquet ipsum. Ut rutrum risus tristique, pretium lectus eu, sodales dui. Nam congue ex sed odio feugiat, vel pretium leo auctor. Curabitur sed porttitor neque.</p>
         </div>
       </div>
+    </div>
 
-      <div class="sContainer" id="#service">
+    <div class="container-fluid">
+      <div class="sContainer" id="service">
         <div class="sectHeader">
           <h2>Service</h2>
         </div>
       </div>
-
-    </header>
-    <div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 sectHeader" id="community">
+          <h2>Community</h2>
+        </div>
+      </div>
+    </div>
+
 
 
 
@@ -123,6 +224,9 @@
         }
       });
     </script>    -->
+
+
+    <script src="js/newtest.js" type="text/javascript" async></script>
   </body>
 
 </html>

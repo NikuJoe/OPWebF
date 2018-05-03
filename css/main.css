@@ -1,26 +1,110 @@
+.navbar {
+  background-color: rgba(155, 155, 155, .5);
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
+.navbar-brand img{
+  max-height: 1em;
 }
 
 
-/*this is the start of the main section of css*/
+.carousel-item {
+  height: 60vw;
+}
+
+/*controls background images of the slides*/
+.carousel-item-bk_1 {
+  background-image: url("../res/img/city_testsample_1.jpg");
+}
+
+.carousel-item-bk_2 {
+  background-image: url("../res/img/city_testsample_2.jpg");
+}
+
+.carousel-item-bk_3 {
+  background-image: url("../res/img/city_testsample_3.jpg");
+}
+
+.carousel-item-bk_4 {
+  background-image: url("../res/img/city_testsample_4.jpg");
+}
+
+/*global attributes of the slides*/
+.carousel-item-bk_1, .carousel-item-bk_2, .carousel-item-bk_3, .carousel-item-bk_4 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  min-width: 100vw;
+  height: 60vw;
+}
+
+.carousel-caption {
+  top: 50%;
+  bottom: auto;
+  background-color: rgba(100, 100, 100, .8);
+  max-width: 50vw;
+  margin: 0 auto;
+}
+
+.carousel-caption h1 {
+  font-size: 2rem;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+}
+@media only screen and (max-width:767px) {
+  .carousel-caption  p{
+    display: none;
+  }
+}
+
+.carousel-indicators li {
+
+}
+
+
+/*Formatting for SVGTest section*/
+
+.svgTest {
+  text-align: center;
+  width: 80vw;
+  padding-top: 0 auto;
+  padding-bottom: 0 auto;
+}
+
+.brand-svg {
+  height: auto;
+  width: 100%;
+  background-color: red;
+  padding: 0 auto;
+}
+
+
+
+
+
+
+/*floatingMission css*/
+
+
+
+.floatingMission {
+  background-image: url()
+}
+
+.text_Statement {
+  text-align: center;
+  font-family: "Amiri", "Roboto", sans-serif;
+}
+
+
+.namaetesuto {
+  text-align: center;
+  background: rgba(50, 50, 50, .9);
+  color: white;
+}
+
 /*
 h1, h2, h3, h4, h5, h6 {
 	text-align: center;
@@ -90,7 +174,7 @@ header {
 */
 /*global styles*/
 
-/* =======FOR MOST MOBILE DEVICES=======
+/* =======FOR MOST TABLETS DEVICES=======
 @media only screen and (min-width:768px) {
 
   .nav_S {
@@ -107,7 +191,7 @@ header {
 
 }
 */
-/*=======FOR MOST TABLETS=======
+/*=======FOR MOST PCS=======
 @media screen and (min-width:1024px){
 
 
