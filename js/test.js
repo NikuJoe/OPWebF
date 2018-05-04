@@ -11,3 +11,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+
+
+
+
+window.addEventListener("scroll", function svgScript(e) {
+//  if((document.documentElement.scrollTop +document.documentElement.clientHeight) > (1.5*path.getOffset().top)){
+
+    var trueScrollPos = 0;
+    var windowViewBuffer = 0.8; //percentage of animation container within the window
+    var windowSingleBuffer = (1-windowViewBuffer)/2;
+    var aboveHeight = document.documentElement.scrollTop + (1-windowSingleBuffer)*document.documentElement.clientHeight;
+
+    if (aboveHeight< path.getOffset(path).top){
+      trueScrollPos = 0;
+    }
+    else{
+      trueScrollPos = -1*(path.getOffset(path).top - aboveHeight);
+    }
+
+
+//    var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    var scrollPercentage = trueScrollPos / (windowViewBuffer * document.documentElement.clientHeight);
+
+    var drawLength = pathLength * scrollPercentage;
+
+    //Draw on scroll up
+    path.style.strokeDashoffset = pathLength - drawLength;
+
+    scrollPercentage = .8;
+
+    //Removes dasharray on finish for a polished look
+    if (scrollPercentage >= 0.99) {
+      path.style.strokeDasharray = "none";
+    } else {
+      path.style.strokeDasharray = pathLength + " " + pathLength;
+    }
+//  }
+});

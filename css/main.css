@@ -66,9 +66,9 @@
 
 /*Formatting for SVGTest section*/
 
-.svgTest {
+.svgkkkkk {
   text-align: center;
-  width: 80vw;
+  width: 30vw;
   padding-top: 0 auto;
   padding-bottom: 0 auto;
 }
@@ -99,9 +99,15 @@
 }
 
 
-.namaetesuto {
-  text-align: center;
-  background: rgba(50, 50, 50, .9);
+
+/*products section*/
+
+.prod1 {
+  background-color: lightblue;
+}
+
+.prod1img {
+  background-color: black;
   color: white;
 }
 
