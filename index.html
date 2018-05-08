@@ -10,6 +10,10 @@
     <!--for mobile, user-scalable=no disables zoom-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+
+    <!--favicon declarations-->
+
+
     <!--Imports jQuery and Popper.js for bootstrap to play nice-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -37,7 +41,7 @@
 
     <!--Navigation-->
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
+        <nav id="navWrapper" class="navbar navbar-expand-md navbar-light">
           <a class="navbar-brand" href="#"><img src="res/img/logo/OPUS_Logo_noBK_black.png" alt="CompanyLogo"></a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -133,7 +137,7 @@
     </div>
 
     <!--SVG TEST-->
-    <div class="container-fluid svgkkkkk" id= svgGroup>
+    <div class="container-fluid svgCont" id= svgGroup>
       <svg
          xmlns="http://www.w3.org/2000/svg"
          id="side10"
@@ -158,9 +162,9 @@
 
     <div class="container">
 
-      <div class="row prod1">
-        <div class="col-md-3 prod1img">
-          <h3>intraoral scanner</h3>
+      <div class="row product_item prod1">
+        <div class="col-md-3 prod_item_img">
+          <img class="img-fluid" src="res/img/machine_colorfulPrint.jpg" alt="OPUS_Milling">
         </div>
         <div class="col-md-9 prod1des">
           <p>
@@ -175,13 +179,13 @@
             another product description goes here
           </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 product_item prod2">
           <h3>milling machine</h3>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 product_item prod3">
           <h3>Sintering Furnace</h3>
         </div>
         <div class="col-md-9">
@@ -197,7 +201,7 @@
             Does it plow
           </p>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 product_item prod4">
           <h3>Vaccum</h3>
         </div>
       </div>

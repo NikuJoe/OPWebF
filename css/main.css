@@ -1,16 +1,20 @@
 .navbar {
-  background-color: rgba(155, 155, 155, .5);
+
 }
 
 .navbar-brand img{
   max-height: 1em;
 }
 
+.fixed-top {
+  z-index: 20;
+  background: white;
+}
 
+/* Carousel css */
 .carousel-item {
   height: 60vw;
 }
-
 /*controls background images of the slides*/
 .carousel-item-bk_1 {
   background-image: url("../res/img/city_testsample_1.jpg");
@@ -39,11 +43,14 @@
 }
 
 .carousel-caption {
-  top: 50%;
-  bottom: auto;
+  top:50%;
+  transform: translateY(-50%);
+  bottom: initial;
+  transform-style: preserve-3d;
   background-color: rgba(100, 100, 100, .8);
   max-width: 50vw;
   margin: 0 auto;
+  margin-bottom:25%;
 }
 
 .carousel-caption h1 {
@@ -53,6 +60,8 @@
 .carousel-caption p {
   font-size: 1rem;
 }
+
+/* hides description tagline for small devices. */
 @media only screen and (max-width:767px) {
   .carousel-caption  p{
     display: none;
@@ -62,26 +71,6 @@
 .carousel-indicators li {
 
 }
-
-
-/*Formatting for SVGTest section*/
-
-.svgkkkkk {
-  text-align: center;
-  width: 30vw;
-  padding-top: 0 auto;
-  padding-bottom: 0 auto;
-}
-
-.brand-svg {
-  height: auto;
-  width: 100%;
-  background-color: red;
-  padding: 0 auto;
-}
-
-
-
 
 
 
@@ -100,16 +89,49 @@
 
 
 
+/* Formatting for SVGTest section. */
+
+.svgCont {
+  width: 50vw;
+  padding-top: 0 auto;
+  padding-bottom: 0 auto;
+}
+
+
+
+
 /*products section*/
 
 .prod1 {
   background-color: lightblue;
 }
 
-.prod1img {
-  background-color: black;
-  color: white;
+.prod_item_img {
+  max-height: 25vw;
 }
+
+.prod2 {
+  background-color:blue;
+}
+
+.prod3 {
+  background-color:green;
+}
+
+.prod4 {
+  background-color:red;
+}
+
+
+/* About Us styles*/
+
+.content p {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+
 
 /*
 h1, h2, h3, h4, h5, h6 {

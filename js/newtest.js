@@ -4,21 +4,30 @@
 
 
 
-
-
-
-
 //test var to see what dimensions this returns based on responsive design - will be deleted in the future
 var splashTemp = document.getElementById("rotatingSplash").clientHeight;
+
+
+//affix navbar to the top when window is small
+window.addEventListener("resize", function fixNavBar(e){
+  var screenSize = window.outerWidth;
+  var navObjectus = document.getElementById("navWrapper");
+  if (screenSize <= 767){
+    navObjectus.setAttribute("class", "navbar navbar-expand-md navbar-light fixed-top");
+    navObjectus.setAttribute("padding-bottom", "70px");
+  }
+  else{
+    navObj.setAttribute("class", "navbar navbar-expand-md navbar-light");
+  }
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 //Modifies embeded svg to draw on the scroll.
 var path = document.querySelector("#side10star");
 var pathLength = path.getTotalLength();
 
-path.style.strokeDasharray = pathLength+ " " + pathLength;
+path.style.strokeDasharray = pathLength;
 path.style.strokeDashoffset = pathLength;
-path.getBoundingClientRect();
 
 //get dimensions of the path
 function getOffset(el) {
@@ -52,12 +61,14 @@ window.addEventListener("scroll", function svgScript(e) {
 
     var drawLength = pathLength * scrollPercentage;
 
-    console.log("getOffset(path).top " + getOffset(path).top);
-    console.log("trueScrollPos " + trueScrollPos);
-    console.log("windowViewBuffer " + windowViewBuffer);
-    console.log("windowSingleBuffer " + windowSingleBuffer);
-    console.log("aboveHeight " + aboveHeight);
-    console.log("scrollPercentage " + scrollPercentage);
+  //TEST CODE BELOW: logs values in the console so troubleshoot and adjust values.
+
+  //  console.log("getOffset(path).top " + getOffset(path).top);
+  //  console.log("trueScrollPos " + trueScrollPos);
+  //  console.log("windowViewBuffer " + windowViewBuffer);
+  //  console.log("windowSingleBuffer " + windowSingleBuffer);
+  //  console.log("aboveHeight " + aboveHeight);
+  //  console.log("scrollPercentage " + scrollPercentage);
 
     //Draw on scroll up
     path.style.strokeDashoffset = pathLength - drawLength;
@@ -80,4 +91,4 @@ function updateName() {
   nameValue.textContent = "document.documentElement.scrollTop = " + document.documentElement.scrollTop + "     document.body.scrollTop = " + document.body.scrollTop + "     document.documentElement.scrollHeight = " + document.documentElement.scrollHeight + "     document.documentElement.clientHeight = " + document.documentElement.clientHeight +" svgHeight = " + svgHeight + " splash height = " + splashTemp;
 }
 
-nameValue.addEventListener('click', updateName);
+//nameValue.addEventListener('click', updateName);
