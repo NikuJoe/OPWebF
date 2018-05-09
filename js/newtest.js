@@ -8,13 +8,23 @@
 var splashTemp = document.getElementById("rotatingSplash").clientHeight;
 
 
+//smooth scrolling to anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
 //affix navbar to the top when window is small
 window.addEventListener("resize", function fixNavBar(e){
   var screenSize = window.outerWidth;
-  var navObjectus = document.getElementById("navWrapper");
+  var navObj = document.getElementById("navWrapper");
   if (screenSize <= 767){
-    navObjectus.setAttribute("class", "navbar navbar-expand-md navbar-light fixed-top");
-    navObjectus.setAttribute("padding-bottom", "70px");
+    navObj.setAttribute("class", "navbar navbar-expand-md navbar-light fixed-top");
   }
   else{
     navObj.setAttribute("class", "navbar navbar-expand-md navbar-light");

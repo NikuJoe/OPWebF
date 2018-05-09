@@ -1,3 +1,14 @@
+
+/*--------------------------GLOBAL VARIABLES----------------------------------->
+/*color variables*/
+$color_primary: blue;
+$color_secondary: green;
+
+
+/*----------------------------------------------------------------------------->
+
+
+
 .navbar-brand img{
   max-height: 1em;
 }
@@ -97,8 +108,13 @@
 
 
 /*products section*/
+
 .prod_Cont {
   background: linear-gradient(135deg, rgba(255,127,15,1) 0%,rgba(38,1,9,1) 66%,rgba(38,1,9,1) 66%);
+}
+
+.prod1 {
+  background-color: lightblue;
 }
 
 .prod_item_imgCont {
@@ -107,7 +123,8 @@
 }
 
 .prod_item_desCont {
-  padding: 10px 15px;
+  padding: 5px, 10px;
+  background:  linear-gradient(135deg, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
 }
 
 .prod2 {
