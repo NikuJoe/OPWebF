@@ -7,10 +7,22 @@
   background: white;
 }
 
+.fade {
+  transition: rotate(180deg);
+  transition-delay: 2s;
+}
+
+
 /* Carousel css */
 
 .carousel {
   padding-top:56px;
+}
+
+@media only screen and (min-width:768px) {
+  .carousel {
+    padding-top: 0;
+  }
 }
 
 .carousel-item {
@@ -68,6 +80,7 @@
     display: none;
   }
 }
+
 
 
 /*floatingMission css*/
