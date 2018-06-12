@@ -3,7 +3,7 @@
 
   <head>
 
-    <title>Opus</title>
+    <title>OPWebRev01</title>
 
     <meta charset="utf-8">
 
@@ -15,18 +15,21 @@
 
 
     <!--Imports jQuery and Popper.js for bootstrap to play nice-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
-    <!--Imports Bootstrap 4.1.0 Framework-->
+    <!--Imports Bootstrap 4.1.1 Framework-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!--Imports main custom stylesheets-->
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/GlobalSASS.css" rel="stylesheet">
 
     <!--Imports main custom javasript files-->
-    <script src="js/newtest.js" type="text/javascript" async></script>
+    <script src="js/enableNavIcon.js" type="text/javascript" async></script>
+    <script src="js/events.js" type="text/javascript" async></script>
 
     <!--Imports Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Amiri" rel="stylesheet">
@@ -34,222 +37,263 @@
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
+  </head>    
+  
+  <body>  
 
-  </head>
 
-  <body>
 
-    <!--Navigation-->
+    <nav id="navWrapper" class="navbar navbar-expand-md">
+      <a class="navbar-brand" href="#"><img class="nav-img-logo" src="res/logo/logo_OPUS_bknone_white.png" alt="CompanyLogo"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span id="navbar-toggler-icon-id" class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navbarResponsive" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto dropdown">
+          <li class="nav-item active">
+            <a class="nav-link" href="#rotatingSplash">Home</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutUs">About Us</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#service">Service</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="#community">Community</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+    
+
     <header>
-        <nav id="navWrapper" class="navbar navbar-expand-md navbar-light">
-          <a class="navbar-brand" href="#"><img src="res/img/logo/OPUS_Logo_noBK_black.png" alt="CompanyLogo"></a>
+      <div id="rotatingSplash" class="carousel slide carousel-fade" data-ride="carousel" data-interval="7000" data-pause="hover">
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div id="navbarResponsive" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav ml-auto dropdown">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#products">Products</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#aboutUs">About Us</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#service">Service</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#community">Community</a></li>
-            </ul>
+          <!--Carousel indicators-->
+    
+          <ul class="carousel-indicators">
+            <li class="active" data-target="#rotatingSplash" data-slide-to="0"></li>
+            <li data-target="#rotatingSplash" data-slide-to="1"></li>
+            <li data-target="#rotatingSplash" data-slide-to="2"></li>
+            <li data-target="#rotatingSplash" data-slide-to="3"></li>
+          </ul>
+    
+          <!--Carousel Slides-->
+    
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <a href="#community">
+                <div class="carousel-item-bk_1">
+                </div>
+                <div class="carousel-caption">
+                  <h1>DOF SHARP2 Plus</h1>
+                  <p>5 Axis / Wet & Dry</p>
+                </div>
+              </a>
+            </div>
+    
+            <div class="carousel-item">
+              <a href="#aboutUs">
+                <div class="carousel-item-bk_2">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Intraoral Scanner</h1>
+                  <p>The best of the best</p>
+                </div>
+              </a>
+            </div>
+    
+            <div class="carousel-item">
+              <a href="#products">
+                <div class="carousel-item-bk_3">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Sinter</h1>
+                  <p>Bakes things just right</p>
+                </div>
+              </a>
+            </div>
+    
+            <div class="carousel-item">
+              <a href="#aboutUs">
+                <div class="carousel-item-bk_4">
+                </div>
+                <div class="carousel-caption">
+                  <h1>Vacuum</h1>
+                  <p>Sells itself</p>
+                </div>
+              </a>
+            </div>
           </div>
-        </nav>
+    
+        </div>
     </header>
 
-    <!--Carousel code-->
-    <div id="rotatingSplash" class="carousel slide carousel-fade" data-ride="carousel" data-interval="7000" data-pause="hover">
 
-      <!--Carousel indicators-->
 
-      <ul class="carousel-indicators">
-        <li class="active" data-target="#rotatingSplash" data-slide-to="0"></li>
-        <li data-target="#rotatingSplash" data-slide-to="1"></li>
-        <li data-target="#rotatingSplash" data-slide-to="2"></li>
-        <li data-target="#rotatingSplash" data-slide-to="3"></li>
-      </ul>
 
-      <!--Carousel Slides-->
 
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-          <div class="carousel-item-bk_1">
-          </div>
-          <div class="carousel-overlay">
-          </div>
-          <div class="carousel-caption">
-            <h1>DOF Milling Machine 1</h1>
-            <p>This is the best milling machine available. Period.</p>
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item-bk_2">
-          </div>
-          <div class="carousel-overlay">
-          </div>
-          <div class="carousel-caption">
-            <h1>Intraoral Scanner</h1>
-            <p>Will we be able to carry this product?</p>
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item-bk_3">
-          </div>
-          <div class="carousel-overlay">
-          </div>
-          <div class="carousel-caption">
-            <h1>Sinter</h1>
-            <p>Bakes things just right</p>
-          </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="carousel-item-bk_4">
-          </div>
-          <div class="carousel-overlay">
-          </div>
-          <div class="carousel-caption">
-            <h1>Vacuum</h1>
-            <p>This thing sucks.</p>
-          </div>
-        </div>
-      </div>
 
-    </div>
+
+
+
+
+    
+    
+    
+    
+  
+    
 
     <!--Mission Statement-->
-    <div class="container-fluid">
-      <div class="floatBox_Mission">
-        <h2 class="text_Statement"> We are dedicated to crafting catered dental workflow solutions digitally.
-          <br>Class. Pride. Honor.
-          <br>Opus
-        </h2>
+    <section class="container-fluid" id="floatbox-mission-id">
+      
+      <div class="row floatbox-mission">
+        <div class="col floatbox-mission-text"> 
+          <h2>We are dedicated to crafting catered digital dental workflow solutions.
+            <br>Class. Pride. Honor
+            <br>Opus
+          </h2>
+        </div>
       </div>
-    </div>
 
-    <!--SVG TEST-->
-    <div class="container-fluid svgCont" id= svgGroup>
-      <svg
-         xmlns="http://www.w3.org/2000/svg"
-         id="side10"
-         viewBox="0 0 166.95145 165.92159"
-         width="100%">
-          <path
-             id="side10star" fill="none" stroke="black" stroke-width="2" transform="translate(-19.298723,-57.09014)"
-             d="M 97.517856,57.363095 36.285715,213.08928 175.38095,118.59524 34.773809,108.76785 152.70238,222.91667 76.35119,68.70238 86.934523,222.91667 145.89881,69.458334 19.654762,158.66071 185.96428,179.07143 Z"/>
-      </svg>
-    </div>
+    </section>
+  
+    
+    
+    
 
+
+
+
+
+
+
+
+    
     <!--Prodcut Content-->
-    <div class="container-fluid">
+    <section class="container-fluid" id="products">
 
-      <div class="row pC" id="products">
-        <div class="sectHeader">
+      <div class="row">
+        <div class="col sect-header">
           <h2>Products</h2>
         </div>
       </div>
 
-    </div>
-
-
-    <div class="container-fluid prod_Cont">
-
-      <div class="row product_item prod1">
-        <div class="col-md-7">
-          <div class="prod_item_imgCont">
-            <img class="card-img rounded" src="res/img/machine_colorfulPrint.jpg" alt="OPUS_Milling">
+      <div class="row product-wheel">
+        <div class="col-md-4 prodCont-3 text-center">
+          <div class="prodImgCircle prodImgCircle_1 hideme">
+          </div>
+          <h3>This is a test of the product items.</h3>
+        </div>
+        <div class="col-md-4 prodCont-3 text-center">
+          <div class="prodImgCircle prodImgCircle_2 hideme">
+          </div>
+          <h3 class="">Another test of the product items</h3>
+          <h4 class="">Insert product description here</h4>
+        </div>
+        <div class="col-md-4 prodCont-3 text-center">
+          <div class="prodImgCircle prodImgCircle_3 hideme">
           </div>
         </div>
-        <div class="col-md-5 prod_item_desCont">
-          <p>
-            product description goes here in the future
-          </p>
-        </div>
       </div>
+      <div class="row"></div>
 
-      <div class="row">
-        <div class="col-md-7 order-md-2 product_item prod2">
-          <div class="prod_item_imgCont initial-hidden">
-            <img class="img-fluid dblock rounded" src="res/img/dent_toothbrush_cup.jpg" alt="cup of toothbrushes" >
-          </div>
-        </div>
-        <div class="col-md-5 order-md-1 prod_item_desCont">
-          <p>
-            This is a cup full of toothbrushes, do I need to say more?
-          </p>
-        </div>
-      </div>
+    </section>
 
-      <div class="row">
-        <div class="col-md-7 product_item prod3">
-          <div class="prod_item_imgCont initial-hidden">
-            <a href="/thisproduct.html"><img class="img-fluid rounded" src="res/img/dent_toothbrush_paste.jpg" alt="After Milling"></a>
-          </div>
-        </div>
-        <div class="col-md-5 prod_item_desCont">
-          <p>
-            Ignite your passion...for baking crowns and the odd hotdog.
-          </p>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-7 order-md-2 product_item prod4">
-          <div class="prod_item_imgCont initial-hidden invisible">
-            <img class="img-fluid dblock rounded" src="res/img/comp_dirty.jpg" alt="After Milling" >
-          </div>
-        </div>
-        <div class="col-md-5 order-md-1 prod_item_desCont">
-          <p>
-            This is the Sintering furnace
-          </p>
-        </div>
-      </div>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--About Us**************************************************************************-->
 
     <div class="container-fluid" id="aboutUs">
 
-      <div class="row hContainer">
-        <div class="sectHeader">
+      <div class="row">
+        <div class="col sect-header">
           <h2>About Us</h2>
         </div>
-
-        <div class="content">
-          <P> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus non risus vulputate laoreet. Praesent accumsan nisl in libero euismod, et tincidunt dolor ultrices. Vivamus nec libero facilisis, iaculis quam vel, gravida nunc. Suspendisse ut tempus nibh. Phasellus sed pharetra magna. Mauris vulputate purus ac ante mollis, eget aliquam nisl vehicula. Mauris efficitur nulla vel aliquam condimentum. Donec consequat nec urna eget sodales. Quisque tellus purus, sodales vitae ipsum ut, egestas blandit risus. Sed laoreet viverra sem, suscipit accumsan dui. Suspendisse sollicitudin, libero sit amet fermentum pretium, dolor lorem rutrum enim, quis scelerisque nisl dui egestas augue. Ut in urna ipsum. Donec non purus elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <p>In vitae congue neque. Ut dictum est sed ullamcorper dignissim. Etiam at laoreet turpis. Pellentesque auctor eleifend dolor non ullamcorper. Sed tincidunt neque a nisi pulvinar, ut ultricies massa lobortis. Cras vitae placerat erat. Ut urna lorem, cursus mollis pharetra vitae, congue quis arcu. Maecenas nec sagittis massa. Nulla facilisi. Mauris a massa orci. Nam tempus nisi ut turpis suscipit, vel aliquam dui elementum. Quisque in justo in ipsum lacinia dignissim nec vulputate justo. Phasellus feugiat interdum arcu et posuere.</p>
-          <p>Ut pharetra eros eu est scelerisque, sit amet pharetra lorem mollis. Praesent eros orci, varius ac ultricies non, lacinia posuere velit. Quisque sit amet viverra tortor. Suspendisse condimentum, dui vel maximus pulvinar, velit justo rutrum sem, eget sollicitudin nulla eros et ante. Donec et magna eu dolor egestas lobortis. Sed faucibus, erat in consequat accumsan, orci odio vulputate erat, at vestibulum mi ex eu eros. Duis eget porta libero. Suspendisse potenti. Duis quis leo id ex scelerisque imperdiet in ut arcu. Aliquam risus velit, convallis vel justo non, laoreet elementum enim. Ut vestibulum dolor vel neque viverra blandit.</p>
-          <p>Maecenas dapibus risus ante, nec congue lorem scelerisque a. Nulla a tincidunt purus, non auctor magna. Etiam volutpat risus quis facilisis condimentum. Aliquam fringilla ac leo non mollis. Phasellus faucibus eget lectus sed mollis. Curabitur viverra gravida urna, vitae luctus enim scelerisque et. Aenean varius massa urna. Quisque sodales justo eget bibendum pharetra. Fusce accumsan maximus imperdiet. Donec nec tortor turpis. Ut cursus orci vitae est interdum auctor. Nunc ultricies tempor varius. Etiam rutrum ultrices faucibus. Etiam euismod at lacus et euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
-          <p>In finibus, dolor a porttitor luctus, justo orci eleifend enim, non dictum orci metus in orci. Donec sem ligula, vestibulum et turpis sit amet, vehicula porttitor diam. Morbi feugiat feugiat nisi, sit amet congue metus ullamcorper vitae. Cras commodo, diam vel mollis vehicula, ante sem accumsan arcu, at elementum magna quam ut dui. Etiam nec mollis felis. In ut quam neque. Duis vitae gravida odio. Aliquam vitae euismod mauris, quis varius tortor. Nulla malesuada, diam dignissim vulputate auctor, augue tortor convallis sapien, et commodo nisi lacus sit amet quam. Vestibulum tincidunt in arcu sit amet pulvinar. Proin viverra tortor nec odio ornare lobortis. Vivamus a nisi tincidunt, posuere neque vel, convallis sem. Nunc nec porttitor magna, sit amet aliquet ipsum. Ut rutrum risus tristique, pretium lectus eu, sodales dui. Nam congue ex sed odio feugiat, vel pretium leo auctor. Curabitur sed porttitor neque.</p>
-        </div>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="sContainer" id="service">
-        <div class="sectHeader">
-          <h2>Service</h2>
+    <section class="container">
+      <div class="row comp-val-header">
+        <h3>OPUS Digital Dental Solutions is committed to cultivating deep, enriching relationship with our clients and the dental community through leading the digital dental market in customized workflow solutions developed to specifically cater to each individual client. A tech-company at heart, we strive to bring our clients the best the digital dental world has to offer; in both products and service.</h3>
+      </div>
+
+
+      <div class="row au-row">
+        <div class="col-md-4 comp-val text-center order-md-1">
+          <h2>Honesty</h2>
+        </div>
+        <div class="col-md-8 comp-val-desc text-center order-md-2 hideme">
+          <p>Always the best policy! We are serious about being serious and teach our employees to continually do what is right, even if the consequences are not in our best interest. Not only that, we also hold ourselves to a very high standard of business edicate, encouraging our employees contact and/or act first when a problem arises.</p>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12 sectHeader" id="community">
-          <h2>Community</h2>
+      <div class="row au-row">
+        <div class="col-md-4 comp-val text-center order-md-2">
+          <h2>Quality</h2>
+        </div>
+        <div class="col-md-8 comp-val-desc text-center order-md-1 hideme">
+          <p>We are only as good as the products/services we provide. That's why we here at OPUS are obsessed with bringing our clients the best of the digital dental world exclusively address every aspect of our client's dream niche.</p>
         </div>
       </div>
-    </div>
+
+      <div class="row au-row">
+        <div class="col-md-4 comp-val text-center order-md-1">
+          <h2>Innovation</h2>
+        </div>
+        <div class="col-md-8 comp-val-desc text-center order-md-2 hideme">
+          <p>Technology is one of our passions and we devote a good amount of our time to ensure the products we carry are at the cusp of innovation.  However, a true understanding of these products and how they can fit into existing or potential workflows is essential to making our client solutions simple and seemless; an aspect of our own innovation we are constantly striving to perfect.</p>
+        </div>
+      </div>
+
+
+      <div class="row au-row">
+        <div class="col-md-4 comp-val text-center order-md-2">
+          <h2>Teamwork</h2>
+        </div>
+        <div class="col-md-8 comp-val-desc text-center order-md-1 hideme">
+          <p>As the saying goes, it makes the dream work; our dream of assiting you reach your true potential that is!  Our strong belief in company unity extends beyond the scope of our offices and into your business.  At the end of the day, you are part of our team too!</p>
+        </div>
+
+      </div>
+
+      <div class="row au-row">
+        <div class="col-md-4 comp-val text-center order-md-1">
+          <h2>Feedback</h2>
+        </div>
+        <div class="col-md-8 comp-val-desc text-center order-md-2 hideme">
+          <p>Though natraully entwined with Teamwork, we felt that communication is so inherently important to us that it deserves it's own section!  Feedback loops are an important part of any well-designed system as a way of checking and correcting potential emerging problems. In response we have built our company around the principle of listening to and accomodating clients and our own employees as a way of making adjustments to embody our belief in progrress.</p>
+        </div>
+      </div>
+
+
+    </section>
 
 
 
@@ -259,25 +303,158 @@
 
 
 
-    <!--///////////////////////////////////////////////////////////////////////////-->
 
-    <!--Fallbacks for if the CDN fails, uses local versions of frameworks/libraries-->
 
-    <!-- jQuery local fallback -->
-    <!--   <script>window.jQuery || document.write('<script src="/local/jquery.min.js"><\/script>')</script>  -->
 
-    <!-- Bootstrap JS local fallback -->
-    <!--   <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="/js/#Bootstrap410/boostrap.min.js"><\/script>')}</script>   -->
-    <!-- Bootstrap CSS local fallback -->
-    <!--   <div id="bootstrapCssTest" class="hidden"></div>
-    <script>
-      $(function() {
-        if ($('#bootstrapCssTest').is(':visible')) {
-          $("head").prepend('<link rel="stylesheet" href="/css/#Bootstrap410/boostrap.min.css">');
-        }
-      });
-    </script>    -->
+
+<!--service-->
+    <section class="service">
+      <div class="container-fluid" id="service">
+
+        <div class="row">
+          <div class="col sect-header">
+            <h2>Service</h2>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 text-content">
+              <P> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus non risus vulputate laoreet. Praesent accumsan nisl in libero euismod, et tincidunt dolor ultrices. Vivamus nec libero facilisis, iaculis quam vel, gravida nunc. Suspendisse ut tempus nibh. Phasellus sed pharetra magna. Mauris vulputate purus ac ante mollis, eget aliquam nisl vehicula. Mauris efficitur nulla vel aliquam condiment
+              um. Donec consequat nec urna eget sodales. Quisque tellus purus, sodales vitae ipsum ut, egestas blandit risus. Sed laoreet viverra sem, suscipit accumsan dui. Suspendisse sollicitudin, libero sit amet fermentum pretium, dolor lorem rutrum enim, quis scelerisque nisl dui egestas augue. Ut in urna ipsum. Donec non purus elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        
+              <p>In vitae congue neque. Ut dictum est sed ullamcorper dignissim. Etiam at laoreet turpis. Pellentesque auctor eleifend dolor non ullamcorper. Sed tincidunt neque a nisi pulvinar, ut ultricies massa lobortis. Cras vitae placerat erat. Ut urna lorem, cursus mollis pharetra vitae, congue quis arcu. Maecenas nec sagittis massa. Nulla facilisi. Mauris a massa orci. Nam tempus nisi ut turpis suscipit, vel aliquam dui elementum. Quisque in justo in ipsum lacinia dignissim nec vulputate justo. Phasellus feugiat interdum arcu et posuere.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!--community-->
+
+    <section class="community">
+      <div class="container-fluid" id="community">
+
+        <div class="row">
+          <div class="col sect-header">
+            <h2>Community</h2>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12 text-content">
+              <P> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tellus non risus vulputate laoreet. Praesent accumsan nisl in libero euismod, et tincidunt dolor ultrices. Vivamus nec libero facilisis, iaculis quam vel, gravida nunc. Suspendisse ut tempus nibh. Phasellus sed pharetra magna. Mauris vulputate purus ac ante mollis, eget aliquam nisl vehicula. Mauris efficitur nulla vel aliquam condiment
+              um. Donec consequat nec urna eget sodales. Quisque tellus purus, sodales vitae ipsum ut, egestas blandit risus. Sed laoreet viverra sem, suscipit accumsan dui. Suspendisse sollicitudin, libero sit amet fermentum pretium, dolor lorem rutrum enim, quis scelerisque nisl dui egestas augue. Ut in urna ipsum. Donec non purus elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        
+              <p>In vitae congue neque. Ut dictum est sed ullamcorper dignissim. Etiam at laoreet turpis. Pellentesque auctor eleifend dolor non ullamcorper. Sed tincidunt neque a nisi pulvinar, ut ultricies massa lobortis. Cras vitae placerat erat. Ut urna lorem, cursus mollis pharetra vitae, congue quis arcu. Maecenas nec sagittis massa. Nulla facilisi. Mauris a massa orci. Nam tempus nisi ut turpis suscipit, vel aliquam dui elementum. Quisque in justo in ipsum lacinia dignissim nec vulputate justo. Phasellus feugiat interdum arcu et posuere.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!--FOOTER CODE-->
+
+    <footer class="container-fluid footer">
+
+      <div class="row footer-row">
+        <div class="col">
+          <p>1-833-800-6797 || <a href="#" >contact@opusdds.com</a>
+            <br>1303 Central Ave S
+            <br>Suite #202 Kent, WA 98032
+          </p>
+        </div>
+      </div>
+
+
+
+
+
+      <!--first row houses cotact on the left and SNS icons on the right-->
+      <div class="row footer-row">
+
+        <div class="col">
+          <ul class="footer-social-links">
+            <li><a href="#products"><img class="socialM-icon" src="res/icon/icon-linkedin-nat-bknone.svg" alt="linkedin-icon"></a>
+            <li><a href="#products"><img class="socialM-icon" src="res/icon/icon-twitter-nat-bknone.svg" alt="twitter-icon"></a>
+            </li>
+            <li><a href="#history"><img class="socialM-icon" src="res/icon/icon-facebook-nat-bknone.svg" alt="facebook-icon"></a>
+            </li>
+            <li><a href="#community"><img class="socialM-icon" src="res/icon/icon-instagram-nat-bknone.svg" alt="instagram-icon"></a>
+            </li>
+          </ul>
+        </div> 
+
+      </div>
+      
+      <!--second & third rows house navigation links and copyright/legal information-->
+      <div class="row footer-row">
+        <div class="col">
+          <ul class="links-business">
+            <li class="lb-item">
+              <a href="#">Terms & Conditions</a>
+            </li>
+            <li class="lb-item">
+              <a href="#rotatingSplash">Home</a>
+            </li>
+            <li class="lb-item">
+              <a href="#products">Products</a>
+            </li>
+            <li class="lb-item">
+              <a href="#aboutUs">About Us</a>
+            </li>
+            <li class="lb-item">
+              <a href="#service">Service</a>
+            </li>
+            <li class="lb-item">
+              <a href="#community">Community</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row footer-row">
+        <div class="col">
+          <p>&copy;2018 OpusDDS All rights Reserved</p>
+        </div>
+      </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </body>
-
-</html>
+ </html>

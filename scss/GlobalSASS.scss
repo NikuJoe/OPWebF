@@ -1,0 +1,775 @@
+/*----- GLOBAL VARIABLES -----*/
+
+//colors
+$lighten_value: .8;
+$trans_value: .25;
+
+$color_background: #FFF;
+  //rgba(255, 255, 255, 1)
+  $color_background_light: rgba(255, 255, 255, $lighten_value);
+  $color_background_trans: rgba(255, 255, 255, $trans_value);
+
+$color_primary: #F73859;
+  //rgba(247, 56, 89, 1)
+  $color_primary_light: rgba(247, 56, 89, $lighten_value);
+  $color_primary_trans: rgba(247, 56, 89, $trans_value);
+
+$color_secondary: #F3ECC8;
+  //rgba(243, 236, 200, 1)
+  $color_secondary_light: rgba(243, 236, 200, $lighten_value);
+  $color_secondary_trans: rgba(243, 236, 200, $trans_value);
+
+$color_prim_dark: #283149;
+  //rgba(40, 49, 73, 1)
+  $color_prim_dark_light: rgba(40, 49, 73, $lighten_value);
+  $color_prim_dark_trans: rgba(40, 49, 73, $trans_value);
+
+$color_prim_grey: #404B69;
+  //rgba(64, 75, 105, 1)
+  $color_prim_grey_light: rgba(64, 75, 105, $lighten_value);
+  $color_prim_grey_trans: rgba(64, 75, 105, $trans_value);
+
+//text vars
+$font_main: "Raleway";
+$font_header: "Amiri";
+$font_advert: "Cinzel";
+$font_p: "Quattrocento";
+$main_fsize: 10px;
+$main_fsize_head: 2.4rem;
+$main_fsize_p: 1.8rem;
+$fsize_scalarSM: 1.6;
+$fsize_scalarMD: 1.8;
+$fsize_scalarLG: 2;
+$fsize_scalarXL: 2.4;
+$fsize_scalarXXL: 2.8;
+$ratio_golden: 1.61803398875;
+
+
+/*----- Custom Mixins -----*/
+
+/*--- link vars ---*/
+  //primary color scheme for hyperlinks
+  @mixin a-primary {
+    color: $color_secondary;
+    text-decoration: none;
+    @include fix-text-shift;
+  }
+
+  //secondary color scheme for hyperlinks
+  @mixin a-secondary {
+    color: $color_primary;
+    text-decoration: none;
+    @include fix-text-shift;
+  }
+
+//removes stylings from list and it's list items; i.e. no bullet points and is displayed inline.
+@mixin ul-nostyle {
+  list-style-type: none;
+  > * {
+    display: inline;
+  }
+}
+
+//resets margin, padding, and border to 0.  Added to combat how bootstrap adds margins and other properties by default such as after a <p> tag (has a bottom margin).
+@mixin prop-reset {
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+}
+
+/*-----text vars-----*/
+  //white text shadow
+  @mixin text-border-white {
+    text-shadow: -1px -1px 0 #FFF,
+      1px -1px 0 #FFF,
+      -1px 1px 0 #FFF,
+      1px 1px 0 #FFF;
+  }
+
+  //black text shadow
+  @mixin text-border-black {
+    text-shadow: -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  //silly hack that makes sure that text does not transform when css is running an animation. for some reason if this isn't added, then the text morphs when the carousel moves ¯\_(ツ)_/¯
+  @mixin fix-text-shift {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+  }
+
+
+  //assigns values for properties, can be faster for coding, credit to github user "Robovirtuoso"
+  @mixin property($value, $properties){
+    @each $property in $properties {
+      #{$property}: value;
+    }
+  }
+
+  //adjust font sizes to document, can be put anywhere
+  @mixin adjustFont(){
+    font-size: $main_fsize * $fsize_scalarSM;
+
+    @media only screen and (min-width:767px) {
+      font-size: $main_fsize * $fsize_scalarMD;
+    }
+    
+    @media only screen and (min-width:1200px) {
+      font-size: $main_fsize * $fsize_scalarLG;
+    }
+    
+    @media only screen and (min-width:1700px) {
+      font-size: $main_fsize * $fsize_scalarXL;
+    }
+  
+    @media only screen and (min-width:2000px) {
+      font-size: $main_fsize * $fsize_scalarXXL;
+    }
+  }
+
+
+/*----------------------------------------------------------------------------->*/
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+line-height: $ratio_golden;
+font-family: $font_p, Roboto, sans-serif;
+
+  @include adjustFont;
+}
+
+/*preloads images so hover transitions are smooth*/
+body::after {
+  display: none;
+  content:
+  url("https://source.unsplash.com/1600x900/?nature,animals")
+  url("https://source.unsplash.com/1600x900/?nature,weather")
+  url("https://source.unsplash.com/1600x900/?nature,houses")
+  url("https://source.unsplash.com/1600x900/?nature,flowers")
+  url("../res/img/city_testsample_1.jpg")
+  url("../res/img/city_testsample_2.jpg")
+  url("../res/img/city_testsample_3.jpg")
+  url("../res/img/city_testsample_4.jpg")
+  url("../res/img/city_testsample_5.jpg")
+  url("../res/img/comp_dirty.jpg")
+  url("../res/img/dent_chair_black_side.jpg")
+  url("../res/img/dent_chair_red_flat.jpg")
+  url("../res/img/dent_chair_white_close_behind.jpg")
+  url("../res/img/dent_chair_white_low.jpg")
+  url("../res/img/dent_chair_brown_overhead.jpg")
+  url("../res/img/dent_chairside_light.jpg")
+  url("../res/img/dent_chairside_tools.jpg")
+  url("../res/img/dent_jump_chair.jpg")
+  url("../res/img/dent_jump_comp.jpg")
+  url("../res/img/dent_practice_mouth.jpg")
+  url("../res/img/dent_toothbrush_cup.jpg")
+  url("../res/img/dent_toothbrush_paste.jpg")
+  url("../res/img/machine_colorfulPrint.jpg")
+  url("../res/img/machine_drill_bits.jpg");
+}
+
+a {
+  @include a-primary;
+}
+
+body.hasHover a:hover {
+  @include a-secondary;
+  transition: 1s;
+}
+
+
+//resets silly reboot css so that elements in bootstrap will not have a spacer margin underneath
+.row{
+  margin-bottom: 0;
+}
+
+//sets margins to 1/2 of the main font height, so that the font height will be 
+p{
+  margin-top: $main_fsize_p/2;
+}
+
+//initially sets classes to hidden to appear on scroll later
+.hideme {
+  opacity: 1;
+}
+
+.sect-header {
+  background: $color_prim_dark;
+  color: $color_secondary;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: $font_header, sans-serif;
+  >*{
+    margin-bottom: 0;
+    margin-left: 30px;
+  }
+}
+
+.text-content {
+  text-indent: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Carousel css */
+
+.carousel {
+  -webkit-animation: fadein 1.5s;
+  -moz-animation: fadein 1.5s;
+  -o-animation: fadein 1.5s;
+  -ms-animation: fadein 1.5s;
+  animation: fadein 1.5s;
+}
+
+@-webkit-keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-o-keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-ms-keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadein {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.carousel-item {
+  max-height: 100vh;
+  min-height: 384px;
+}
+
+
+
+
+
+
+/*controls background images of the slides*/
+.carousel-item-bk_1 {
+  background-image: url("https://source.unsplash.com/1600x900/?nature,animals");
+}
+
+.carousel-item-bk_2 {
+  background-image: url("https://source.unsplash.com/1600x900/?nature,weather");
+}
+
+.carousel-item-bk_3 {
+  background-image: url("https://source.unsplash.com/1600x900/?houses");
+}
+
+.carousel-item-bk_4 {
+  background-image: url("https://source.unsplash.com/1600x900/?nature,flowers");
+}
+
+/*global attributes of the slides*/
+.carousel-item-bk_1, .carousel-item-bk_2, .carousel-item-bk_3, .carousel-item-bk_4 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 384px;
+  transition-duration: 1s;
+}
+
+body.hasHover .carousel-item:hover >a> .carousel-item-bk_1,
+body.hasHover .carousel-item:hover >a> .carousel-item-bk_2,
+body.hasHover .carousel-item:hover >a> .carousel-item-bk_3,
+body.hasHover .carousel-item:hover >a> .carousel-item-bk_4 {
+  filter: blur(2px);
+  transform: scale(1.01);
+} 
+
+.carousel-caption {
+  top:50%;
+  transform: translateY(-50%);
+  bottom: initial;
+  transform-style: preserve-3d;
+  background-color: $color_prim_dark_light;
+  max-width: 50vw;
+  margin: 0 auto;
+  margin-bottom:25%;
+  h1 {
+    font-size: $main_fsize_head;
+    font-family: $font_header;
+  }
+  p {
+    font-size: $main_fsize_p;
+    font-family: $font_p;
+  }
+}
+
+
+/* hides description tagline for small devices. */
+@media only screen and (max-width:767px) {
+  .carousel-caption {
+    padding: 10px 0px;
+    
+    p{
+      display: none;
+    }
+    
+  }
+}
+
+
+/*changes to rounded diamond shape with spacing.*/
+.carousel-indicators  li{
+  height: 12px;
+  width: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  transform: rotate(45deg);
+  //z-index: 15;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$navbar_scalar: 3;  //image size over text size
+$navbar_shrink_scalar: .6; //navbar shrinkage value
+$navbar_img_shrink_scalar: .55; //navbar logo shrink value
+$navbar_padding_vert: 10px; //navbar padding on the top & bottom
+$navbar_padding_horz: 20px; //navbar padding on the left & right
+$navbar_padding_add: 10px; //navbar extra padding, used for shrinking on scroll
+$navbar_trans_time: .6s;  //navbar transition time, used to remove extra padding
+
+//changes size of nav bars on demand
+@mixin navbarScale($scalar) {
+  .navbar { 
+    a{
+      font-family: $font_header, sans-serif;
+    padding:0;
+      img{
+          max-height: $navbar_img_shrink_scalar * $navbar_scalar * $scalar * $main_fsize;
+      }
+    }
+  }
+}
+
+/*@mixin navbarScaleShrink($scalar) {
+  .navbar-shrink {
+    padding-top: $navbar_shrink_scalar*$navbar_padding_vert;
+    padding-bottom: $navbar_shrink_scalar*$navbar_padding_vert;
+    font-size: $navbar_shrink_scalar * $main_fsize * $scalar;
+    a {
+      padding:0;
+      img{
+        max-height: $navbar_img_shrink_scalar * $navbar_scalar *$navbar_shrink_scalar * $main_fsize * $scalar;
+      }
+    }
+  }
+}
+*/
+//navbar media queries
+@media only screen and (min-width: 0px){
+  @include navbarScale($fsize_scalarSM);
+  //@include navbarScaleShrink($fsize_scalarSM);
+}
+
+@media only screen and (min-width: 768px){
+  @include navbarScale($fsize_scalarMD);
+  //@include navbarScaleShrink($fsize_scalarMD);
+}
+
+@media only screen and (min-width: 1400px){
+  @include navbarScale($fsize_scalarLG);
+  //@include navbarScaleShrink($fsize_scalarLG);
+}
+
+@media only screen and (min-width: 1700px){
+  @include navbarScale($fsize_scalarXL);
+  //@include navbarScaleShrink($fsize_scalarXL);
+}
+
+@media only screen and (min-width: 2000px){
+  @include navbarScale($fsize_scalarXXL);
+  //@include navbarScaleShrink($fsize_scalarXXL);
+}
+
+/*
+@mixin animateALLease($timeofTrans){
+  -webkit-animation: all $timeofTrans ease;
+  -moz-animation: all $timeofTrans ease;
+  -o-animation: all $timeofTrans ease;
+  animation: all $timeofTrans ease;
+} */
+
+.navbar {
+  position: fixed;
+  width: 100vw;
+  background: $color_prim_dark_trans;
+  padding: $navbar_padding_vert+$navbar_padding_add $navbar_padding_horz+$navbar_padding_add;
+  z-index: 16;
+  transition: all $navbar_trans_time ease;
+  //@include animateALLease(.5s);
+}
+
+.navbar-opaque {
+  background-color: $color_prim_dark;
+  padding-top: $navbar_padding_vert;
+  padding-bottom: $navbar_padding_vert;
+}
+
+.navbar-brand {
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+  
+}
+
+.nav-img-logo {
+  @include prop-reset;
+  max-height: 30px;
+}
+
+.navbar-collapse {
+  margin-right: 5px;
+}
+
+.navbar-toggler {
+  border-color: $color_prim_dark_light;
+}
+
+//changes color of links on press:
+.nav-item a:hover {
+  @include a-primary;
+}
+
+body.hasHover .nav-item a:hover{
+  @include a-secondary;
+  transition: $navbar_trans_time;
+}
+
+// HAVE TO MANUALLY CHANGE THE STROKE COLOR HERE SINCE IT IS INLINE AND WANT IT TO FUNCTION WITHOUT JS. Everything else in this scss should be controlled by present vars at the top.
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(247, 56, 89, .25)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  transition: background-image $navbar_trans_time ease;
+  display: none;
+}
+
+.navbar-toggler-icon-opaque {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(247, 56, 89, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*floatingMission section ------------------------------------------------------------------------*/
+
+.floatbox-mission {
+  padding: 100px;
+  background: url("../res/bk/bk_test_gif_animated_walking.gif") fixed no-repeat center;
+  background-size: cover;
+  animation: slow-tran-cycle 5s infinite linear alternate;
+}
+
+@-webkit-keyframes slow-tran-cycle {
+  0% {translateY: -10px;}
+  100% {translateY: 10px;}
+}
+
+@-moz-keyframes slow-tran-cycle {
+  0% {translateY: -10px;}
+  100% {translateY: 10px;}
+}
+
+@-o-keyframes slow-tran-cycle {
+  0% {translateY: -10px;}
+  100% {translateY: 10px;}
+}
+
+@-ms-keyframes slow-tran-cycle {
+  0% {translateY: -10px;}
+  100% {translateY: 10px;}
+}
+
+@keyframes slow-tran-cycle {
+  0% {translateY: -10px;}
+  100% {translateY: 10px;}
+}
+
+.floatbox-mission-text {
+  >* {
+    @include prop-reset;
+    @include text-border-white;
+    @include fix-text-shift;
+  }
+  text-align: center;
+  font-family: $font_advert, $font_header, $font_main, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*products section -------------------------------------------------------------------------------*/
+
+
+.product-wheel{
+  margin: 30px;
+ // background: url("../res/bk/bk_test_gif_animated_walking.gif") no-repeat center scroll;
+ // background-size: contain;
+}
+
+.prodImgCircle {
+  height: 10em;
+  width: 12em;
+  border-radius: 33%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  margin: 2.5rem auto;
+  overflow: hidden;
+  transition: height 1s ease-out;
+}
+
+.prodImgCircle_1 {
+  background-image: url("../res/img/dent_chair_red_flat.jpg");
+}
+
+.prodImgCircle_2 {
+  background-image: url("../res/img/dent_jump_comp.jpg");
+}
+
+.prodImgCircle_3 {
+  background-image: url("../res/img/dent_toothbrush_cup.jpg")
+}
+
+body.hasHover .prodImgCircle_1:hover {
+  background-image: url("../res/img/dent_practice_mouth.jpg");
+  height: 13em;
+}
+
+body.hasHover .prodImgCircle_2:hover {
+  background-image: url("../res/img/dent_chair_white_low.jpg");
+  height: 13em;
+}
+
+body.hasHover .prodImgCircle_3:hover {
+  background-image: url("../res/img/machine_colorfulPrint.jpg");
+  height: 13em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*About Us -------------------------------------------------------------------------------------------*/
+
+.au-row {
+  margin-bottom: 1.5rem;
+}
+
+.comp-val-header{
+  padding: 3rem;
+  text-indent: 3rem;
+}
+
+.comp-val{
+  display: flex;
+  align-items: center;
+  >*{
+    @include prop-reset;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer -------------------------------------------------------------------------------------------*/
+
+//global footer values, translateZ added because slides transitions caused text to morph for the duration of the transition. This removes that glitchy behaviour
+.footer {
+  @include fix-text-shift;
+  background-color: $color_prim_dark; 
+  font-size: $main_fsize * $fsize_scalarMD;
+  font-family: $font_header, sans-serif;
+  color: $color_secondary;
+}
+
+//first row, contains contact info in left col and SNS icons in right col
+.footer-row{
+  @include adjustFont;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: $main_fsize;
+  ul{
+    @include ul-nostyle;
+    @include prop-reset;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+//styles each link
+.lb-item {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+//styles SNS icons
+.socialM-icon {
+  height: 3.5em;
+  width: 3.5em;
+  padding: 10px;
+  transition-duration: 1s;
+}
+
+
+body.hasHover .footer-col3-left:hover {
+  color:primary
+}
+
+body.hasHover .socialM-icon:hover {
+  filter: grayscale(1);
+}
+
+@media only screen and (max-width:767px){
+  .links-business {
+    text-align: none;
+    left: 66%;
+  }
+}
